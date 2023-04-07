@@ -1,19 +1,30 @@
 import { useState } from "react"
 import { useEffect } from "react"
 import {Form} from "react-bootstrap"
-
+const nuvoloso = []
 const url ='http://api.openweathermap.org/geo/1.0/direct?q='
 const url2 ="&appid=f780c73ae254ce52f8c488fc1ac62178"
 const lon =[]
 const lati =[]
 const country =[]
 const citi =[]
+const meteo =[]
+console.log(meteo)
 const HomePage=()=>{
 const [query, setquery]= useState("")
 const [city, setcity] = useState([])
 const [longitudine, setlongitudine] = useState([])
 const [latitudine, setlatitudine] = useState([])
 const [countries, setcountries] = useState([])
+
+const url1 = "https://api.openweathermap.org/data/2.5/weather?lat="
+const latitudinenew = latitudine.slice(0,1)+"&lon="
+const longitudinenew = longitudine.slice(0,1)
+const url3="&appid=f780c73ae254ce52f8c488fc1ac62178"
+
+const [citta, setcitta] = useState([])
+
+
 
 
 
@@ -32,13 +43,16 @@ useEffect(()=>{
     setlatitudine(lati)
     setcountries(country)
     setcities(citi)
+    setcitta(meteo)
+    
 },[])
 
 
 useEffect(() => {
     getcordinates()
-
+getcity()
   }, [query])
+  
 
   const getcordinates = async (props) => {
     try {
@@ -59,6 +73,38 @@ setcity(cityfound)
     }
   }
   
+
+
+  const getcity = async () => {
+    try {
+      let response = await fetch(
+       url1+latitudinenew+longitudinenew+url3
+        )
+      if (response.ok) {
+        let cityfound1 = await response.json()
+setcitta(cityfound1)
+console.log(cityfound1)
+
+        console.log("guarda",city)
+      } else {
+        console.log('error')
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
 return(
     <>
     {city.map((item)=>(
@@ -70,9 +116,7 @@ return(
     ))}
 
     {console.log("longitudine",longitudine)}
-    
-
-
+   
 
     <div className="bg-dark Home" >
         <div className="d-flex align-items-baseline">
@@ -91,6 +135,7 @@ return(
    
 <h1>{cities.slice(-1)}</h1>
 <h2>{longitudine.slice(-1)}</h2>
+<h1>{meteo.base}</h1>
 
 </div>
     </div>
