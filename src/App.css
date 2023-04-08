@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
  
@@ -45,16 +46,24 @@
  border-radius: 30px;
   align-items: center;
   flex-direction: column;
-  box-shadow: inset -1px -2px 15px 4px #929396
+  box-shadow: inset -1px -2px 15px 4px #929396;
+  z-index: 100;
 
 }
 
 .centrato{
   width: 95%;
   border: 5px solid rgb(180, 173, 173);
- 
-  
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+
+
+ color: rgb(0, 0, 0);
 }
+
 .input{
   outline: none !important;
   border:3px solid rgb(199, 191, 191);

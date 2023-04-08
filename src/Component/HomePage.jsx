@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import {Form} from "react-bootstrap"
 const nuvoloso = []
 const url ='http://api.openweathermap.org/geo/1.0/direct?q='
-const url2 ="&appid=f780c73ae254ce52f8c488fc1ac62178"
+const url2 ="&appid=f780c73ae254ce52f8c488fc1ac62178&lang=it"
 const lon =[]
 const lati =[]
 const country =[]
@@ -35,7 +35,9 @@ const handlechange = (e)=>{
 }
 const handlesubmit = async (e)=>{
     e.preventDefault()
-    
+    getcity()
+    meteo.push(citta)
+
 }
 
 useEffect(()=>{
@@ -50,10 +52,11 @@ useEffect(()=>{
 
 useEffect(() => {
     getcordinates()
-getcity()
+   
   }, [query])
   
 
+  
   const getcordinates = async (props) => {
     try {
       let resp = await fetch(
@@ -75,7 +78,7 @@ setcity(cityfound)
   
 
 
-  const getcity = async () => {
+  const getcity = async (a) => {
     try {
       let response = await fetch(
        url1+latitudinenew+longitudinenew+url3
@@ -85,7 +88,7 @@ setcity(cityfound)
 setcitta(cityfound1)
 console.log(cityfound1)
 
-        console.log("guarda",city)
+        console.log("guardaquiiiii",citta)
       } else {
         console.log('error')
       }
@@ -94,11 +97,6 @@ console.log(cityfound1)
     }
   }
   
-
-
-
-
-
 
 
 
@@ -115,7 +113,11 @@ return(
 
     ))}
 
-    {console.log("longitudine",longitudine)}
+    
+
+
+
+    {console.log("longitudine",meteo)}
    
 
     <div className="bg-dark Home" >
@@ -131,13 +133,14 @@ return(
           </Form>
         </div>
         
-<div className="bg-light  h-100 rounded-5 opacity-25 my-5 centrato">
-   
+<div className="bg-light rounded-5 opacity-25 my-5 centrato">
+
 <h1>{cities.slice(-1)}</h1>
 <h2>{longitudine.slice(-1)}</h2>
-<h1>{meteo.base}</h1>
+
 
 </div>
+
     </div>
   
       </>
