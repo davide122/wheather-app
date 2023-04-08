@@ -150,10 +150,12 @@ return(
 </Link>
 {citta.name != undefined && 
 <div className="temp">
-  {citta.main? <h1>{citta.main.temp}</h1> : null}
+  {citta.main? <h1>{citta.main.temp} Temperatura</h1> : null}
 {citta.weather? <h1>{citta.weather[0].description}</h1> : null}
-{citta.weather? <i>{citta.weather[0].icon}</i> : null}
+{citta.weather? <i className={citta.weather[0].icon}></i>  :null}
+{citta.wind? <h1>{citta.wind.speed}velocità vento in km </h1>:null}
 
+{citta.main? <h1>{citta.main.humidity} Umidità</h1> : null}
 {console.log("IMPORTANTE",citta)}
 </div>
 
