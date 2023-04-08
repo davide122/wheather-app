@@ -39,57 +39,42 @@
 }
 
 .Home{
-  height:100%;
-  width: 70%;
-  display: flex;
- border-radius: 30px;
-  align-items: center;
-  flex-direction: column;
-  box-shadow: inset -1px -2px 15px 4px #929396;
-  z-index: 100;
+  
 
 }
 
 .centrato{
-  width: 95%;
-  border: 5px solid rgb(180, 173, 173);
- width: 100%;
- height: 100%;
- display: flex;
- flex-direction: column;
- align-items: center;
 
-
- color: rgb(0, 0, 0);
+ 
 }
 
 .input{
-  outline: none !important;
-  border:3px solid rgb(199, 191, 191);
- background-color:rgb(16, 3, 31) !important;
- color: white !important;
- 
-}
-.Mybutton{
-  border-radius: 20px;
-  background-color: transparent;
-  border: 3px solid rgb(226, 134, 235);
-  outline: none;
-  border: dark solid;
-  height: 35px;
+background-color: black;;
+
 }
 
+
 .temp{
-  background-color: #4a0a6375;
-color:white !important;
-width: 80%;
-height: 50%;
-border-radius: 10px;
-text-align: center;
+
 
 
 }
 
 #root{
   background-color: red;
+}
+
+.Nome{
+  font-size: 50px;
+  color: white;
+margin-top: 10px;
+}
+
+.s{
+  font-weight: 100;
+}
+
+svg{
+  fill: white;
+  
 }
