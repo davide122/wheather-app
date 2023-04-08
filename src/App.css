@@ -1,7 +1,6 @@
 
 .App {
   text-align: center;
- 
 }
 
 .App-logo {
@@ -80,3 +79,17 @@
   height: 35px;
 }
 
+.temp{
+  background-color: #bf1dff;
+color:white !important;
+width: 80%;
+height: 50%;
+border-radius: 10px;
+text-align: center;
+
+
+}
+
+#root{
+  background-color: red;
+}
