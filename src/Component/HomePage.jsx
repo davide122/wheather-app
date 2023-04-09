@@ -182,7 +182,7 @@ return(
 
 
 
-<div className="d-flex justify-content-center flex-column align-items-center my-5">
+<div className="d-flex justify-content-center flex-column align-items-center">
 {citta.weather? <h1 className="Nome s">{citta.weather[0].description}</h1> : null}
   {citta.main? <h1 className="Nome s a">{Math.floor(citta.main.temp - 273.15)}°C</h1> : null}
 <div className="d-flex wrap-wrap my-5 border rounded-5 trasparency align-item-center justify-content-center">
@@ -197,26 +197,26 @@ return(
 
 
 
-<div className="Nome d-flex trasp">
+<div className="Nome d-flex trasp mx-5">
 <div className="text-center">
-<h1 className="Nome">{citta.name}</h1>
+<h1 className="Nome text-primary s ">{citta.name}</h1>
 {next.list? <img className="" src={`https://openweathermap.org/img/w/${next.list[0].weather[0].icon}.png`}/>: null}
-  {next.list? <h1 className="mx-5">{next.list[0].dt_txt}</h1>: null}
+  {next.list? <h1 className="mx-5 s">{next.list[0].dt_txt}</h1>: null}
   {next.list? <h1 className="mx-5">{next.list[0].weather[0].description}</h1>: null}
 </div>
 
 <div className="text-center">
-<h1 className="Nome">{citta.name}</h1>
+<h1 className="Nome text-primary s">{citta.name}</h1>
 {next.list? <img className="" src={`https://openweathermap.org/img/w/${next.list[1].weather[0].icon}.png`}/>: null}
-  {next.list? <h1 className="mx-5">{next.list[1].dt_txt}</h1>: null}
+  {next.list? <h1 className="mx-5 s">{next.list[1].dt_txt}</h1>: null}
   {next.list? <h1 className="mx-5">{next.list[1].weather[0].description}</h1>: null}
 </div>
 
 
 <div className="text-center">
-<h1 className="Nome">{citta.name}</h1>
+<h1 className="Nome text-primary s">{citta.name}</h1>
 {next.list? <img className="" src={`https://openweathermap.org/img/w/${next.list[2].weather[0].icon}.png`}/>: null}
-  {next.list? <h1 className="mx-5">{next.list[2].dt_txt}</h1>: null}
+  {next.list? <h1 className="mx-5 s">{next.list[2].dt_txt}</h1>: null}
   {next.list? <h1 className="mx-5">{next.list[2].weather[0].description}</h1>: null}
 </div>
 
